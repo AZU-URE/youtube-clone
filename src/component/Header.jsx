@@ -5,7 +5,7 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 function Header() {
   return (
-    <div className="grid grid-flow-col grid-cols-12 p-[1rem] px-[2rem] shadow-lg ">
+    <div className="grid grid-flow-col grid-cols-12 p-[1rem] px-[1rem] shadow-lg ">
       <div className="flex items-center col-span-2 space-x-5">
         <GiHamburgerMenu className="h-[1.5rem] w-auto " />
         <img src={YOUTUBE_LOGO} alt="yoututbe" className="h-[2rem]"></img>

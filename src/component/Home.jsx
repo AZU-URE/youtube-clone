@@ -4,7 +4,7 @@ import VideoContainer from "./VideoContainer";
 
 function Home() {
   return (
-    <div>
+    <div className="w-full h-full px-[2rem] py-[1rem]">
       <CategoryContainer />
       <VideoContainer />
     </div>
