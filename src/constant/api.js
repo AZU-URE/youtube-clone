@@ -1,0 +1,1 @@
+export const MOSTO_POPULAR_VIDEOS = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=US&key=AIzaSyBYrOoj5ZrYkjx3KrvKFmABAtXl-1tWOwg`;

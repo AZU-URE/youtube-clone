@@ -3,12 +3,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { YOUTUBE_LOGO } from "../constant/resources";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../util/redux-store/BodySlice";
 function Header() {
+  const dispatch = useDispatch();
   return (
     <div className="grid grid-flow-col grid-cols-12 p-[1rem] px-[1rem] shadow-lg ">
       <div className="flex items-center col-span-2 space-x-5">
-        <GiHamburgerMenu className="h-[1.5rem] w-auto " />
-        <img src={YOUTUBE_LOGO} alt="yoututbe" className="h-[2rem]"></img>
+        <GiHamburgerMenu
+          className="h-[1.5rem] w-auto cursor-pointer "
+          onClick={() => dispatch(toggleSidebar())}
+        />
+        <img src={YOUTUBE_LOGO} alt="yoututbe" className="h-[1.75rem]"></img>
       </div>
       <form className="col-span-8  w-full flex justify-center  ">
         <input

@@ -4,7 +4,7 @@ import { CATEGORY_LIST } from "../constant/lists";
 
 function CategoryContainer() {
   return (
-    <div className="mb-[1rem] flex w-[82vw] space-x-[1rem] overflow-x-scroll no-scrollbar">
+    <div className=" ml-[1rem] mb-[1rem] flex w-[82vw] space-x-[1rem] overflow-x-scroll no-scrollbar">
       {CATEGORY_LIST.map((el) => (
         <CategoryButton key={el.name} {...el} />
       ))}
