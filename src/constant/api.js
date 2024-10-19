@@ -1,1 +1,1 @@
-export const MOSTO_POPULAR_VIDEOS = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=US&key=AIzaSyBYrOoj5ZrYkjx3KrvKFmABAtXl-1tWOwg`;
+export const MOST_POPULAR_VIDEOS = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=US&key=${process.env.REACT_APP_YOUTUBE_API}`;
