@@ -9,8 +9,11 @@ const BodySlice = createSlice({
     toggleSidebar: (state) => {
       state.sidebarOpen = !state.sidebarOpen;
     },
+    closeSidebar: (state) => {
+      state.sidebarOpen = false;
+    },
   },
 });
 
 export default BodySlice.reducer;
-export const { toggleSidebar } = BodySlice.actions;
+export const { toggleSidebar, closeSidebar } = BodySlice.actions;

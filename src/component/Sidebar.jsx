@@ -4,12 +4,16 @@ import { SIDEBAR_LIST1 } from "../constant/lists";
 import SidebarElement from "./Elements/SidebarElement";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { closeSidebar } from "../util/redux-store/BodySlice";
 
 function Sidebar() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const path = location.pathname;
   useEffect(() => {
     if (path !== "/") {
+      dispatch(closeSidebar());
     }
   }, [path]);
   const open = useSelector((store) => store.body.sidebarOpen);
