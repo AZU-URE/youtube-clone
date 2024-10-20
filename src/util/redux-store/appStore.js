@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import HOME_REDUCER from "./HomeSlice";
 import BODY_REDUCER from "./BodySlice";
+import SEARCH_REDUCER from "./searchSlice";
 const appStore = configureStore({
   reducer: {
     home: HOME_REDUCER,
     body: BODY_REDUCER,
+    search: SEARCH_REDUCER,
   },
 });
 

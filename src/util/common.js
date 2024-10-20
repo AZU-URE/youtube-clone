@@ -5,13 +5,13 @@ export const timestampRevamp = (timestamp) => {
   const month = present.getMonth() - date.getMonth();
   const day = present.getDate() - date.getDate();
   if (year !== 0) {
-    return year + "year ago";
+    return year + " year ago";
   } else {
     if (month !== 0) {
-      return month + "month ago";
+      return month + " month ago";
     } else {
       if (day > 1) {
-        return day + "days ago";
+        return day + " days ago";
       } else {
         return "Today";
       }
