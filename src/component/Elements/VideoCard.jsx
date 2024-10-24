@@ -8,7 +8,7 @@ function VideoCard({ detail }) {
   const { viewCount } = statistics;
 
   return (
-    <div className="hover:shadow-xl hover:bg-slate-50/50 hover:scale-[1.03] p-2 py-[1rem] rounded-lg cursor-pointer">
+    <div className="hover:shadow-xl hover:bg-slate-50/50 hover:scale-[1.03] p-2 py-[1rem] rounded-lg cursor-pointer ">
       <img
         src={thumbnails.medium.url}
         alt="thumbnail"

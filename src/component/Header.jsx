@@ -1,17 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { YOUTUBE_LOGO } from "../constant/resources";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { IoSearchOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../util/redux-store/BodySlice";
-import { setSearchQuery } from "../util/redux-store/searchSlice";
+import {
+  setSearchQuery,
+  setShowSuggestion,
+} from "../util/redux-store/searchSlice";
 import useYoutubeSearch from "../hooks/useYoutubeSearch";
 import SearchSuggestion from "./Elements/SearchSuggestion";
 function Header() {
   const dispatch = useDispatch();
   const searchQuery = useSelector((store) => store.search.query);
-  const [showSuggestion, setShowSuggestion] = useState(false);
+  const showSuggestion = useSelector((store) => store.search.showSuggestion);
+  // const [showSuggestion, setShowSuggestion] = useState(false);
+  const handleClickOutside = () => {
+    dispatch(setShowSuggestion(false));
+  };
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-form")) {
+      handleClickOutside();
+    }
+  });
   const { getSuggestions } = useYoutubeSearch();
   useEffect(() => {
     const timer = setTimeout(getSuggestions, 200);
@@ -20,7 +33,7 @@ function Header() {
     };
   }, [searchQuery]);
   return (
-    <div className="grid grid-flow-col grid-cols-12 p-[1rem] px-[1rem] shadow-lg ">
+    <div className="grid grid-flow-col grid-cols-12 p-[1rem] px-[1rem] shadow-lg  w-full fixed top-0 z-10 bg-white">
       <div className="flex items-center col-span-2 space-x-5">
         <GiHamburgerMenu
           className="h-[1.5rem] w-auto cursor-pointer "
@@ -30,7 +43,7 @@ function Header() {
       </div>
       {/* <div className="col-span-8 items-center w-full flex justify-center flex-col"> */}
       <form
-        className=" w-full col-span-8 flex justify-center relative  "
+        className=" search-form w-full col-span-8 flex justify-center relative  "
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -39,8 +52,8 @@ function Header() {
           className="border-[1px] border-slate-500 w-[70%] p-[0.5rem] px-[1rem] rounded-l-full"
           value={searchQuery}
           onChange={(e) => dispatch(setSearchQuery(e.target.value))}
-          onFocus={() => setShowSuggestion(true)}
-          onBlur={() => setShowSuggestion(false)}
+          onFocus={() => dispatch(setShowSuggestion(true))}
+          // onBlur={() => setShowSuggestion(false)}
         ></input>
         <button
           type="submit"

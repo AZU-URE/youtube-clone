@@ -19,7 +19,7 @@ function Sidebar() {
   const open = useSelector((store) => store.body.sidebarOpen);
   return (
     <div
-      className={`shadow-xl shadow-zinc-500 bg-zinc-100 ${
+      className={` shadow-xl shadow-zinc-500 bg-zinc-100 fixed h-screen ${
         open
           ? "p-[1rem] space-y-[0.5rem]"
           : "px-[0.25rem] py-[1rem] space-y-[1.5rem]"

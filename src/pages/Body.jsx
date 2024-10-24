@@ -6,7 +6,7 @@ function Body() {
   return (
     <div className="w-full h-screen">
       <Header />
-      <div className="h-full w-full flex">
+      <div className="h-full w-full flex space-x-[5rem] mt-[4.5rem]">
         <Sidebar />
         <Outlet />
       </div>

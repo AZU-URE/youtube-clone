@@ -31,3 +31,11 @@ export const refactorNum = (num) => {
     return Math.round(num / 1000000000) + "B";
   }
 };
+
+export const refactorQuery = (query) => {
+  if (query !== undefined) {
+    return query.replace(/\s+/g, "");
+  } else {
+    return query;
+  }
+};
