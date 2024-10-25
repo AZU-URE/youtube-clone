@@ -3,4 +3,7 @@ export const SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const SEARCH_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=`;
-export const KEY = `key=${process.env.REACT_APP_YOUTUBE_API}`;
+export const KEY = `&key=${process.env.REACT_APP_YOUTUBE_API}`;
+
+export const COMMENT_THREAD =
+  "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=";

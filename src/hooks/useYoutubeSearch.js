@@ -22,11 +22,10 @@ const useYoutubeSearch = () => {
   };
 
   const getSearchVideo = async (query) => {
-    const url = `${SEARCH_VIDEO_API}${query}&${KEY}`;
+    const url = `${SEARCH_VIDEO_API}${query}${KEY}`;
     const data = await fetch(url);
     const json = await data.json();
     dispatch(setResultVideo(json?.items));
-    // console.log(json?.items);
     // console.log(json);
   };
   return { getSuggestions, getSearchVideo };

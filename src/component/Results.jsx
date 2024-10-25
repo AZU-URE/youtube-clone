@@ -17,11 +17,13 @@ function Results() {
   if (result.length === 0) return;
   return (
     <div className="p-[1rem] space-y-[2rem]">
-      {result.map((video) => (
-        <Link to={`/watch?v=${video.id.videoId}`} key={video.id.videoId}>
-          <ResultVideoCard video={video} />
-        </Link>
-      ))}
+      {result.map((video) =>
+        video?.id?.kind === "youtube#video" ? (
+          <Link to={`/watch?v=${video.id.videoId}`} key={video.id.videoId}>
+            <ResultVideoCard video={video} />
+          </Link>
+        ) : null
+      )}
     </div>
   );
 }
